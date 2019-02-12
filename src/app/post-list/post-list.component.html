@@ -1,5 +1,9 @@
-<div>
-  <ul class="list-group">
-    <app-post-list-item *ngFor="let elem of mesPosts" [postElementToDisplay]="elem"></app-post-list-item>
-  </ul>
+<div class="row">
+  <div class="col-xs-12"> 
+    <h2>Les derniers posts</h2>  
+    <ul class="list-group">
+      <app-post-list-item *ngFor="let post of posts; let i = index" [postElementToDisplay]="post"></app-post-list-item>
+    </ul>
+    <button class="btn btn-primary" (click)="onNewPost()">Nouveau post</button> 
+  </div>  
 </div>

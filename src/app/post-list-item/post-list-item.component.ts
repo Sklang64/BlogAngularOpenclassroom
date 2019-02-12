@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../../entities/post';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-post-list-item',
@@ -11,7 +12,7 @@ export class PostListItemComponent implements OnInit {
   @Input() postElementToDisplay: Post;
   postColor:string;
 
-  constructor() { }
+  constructor(private _postService: PostService) { }
 
   ngOnInit() {
     /**
@@ -24,6 +25,14 @@ export class PostListItemComponent implements OnInit {
     }else if(this.postElementToDisplay.loveIts == 0){
       this.postColor = '';
     }
+  }
+
+      /**
+   * Appel au service post pour la suppression d'un livre
+   * @param post Post
+   */
+  onDeletePost(post: Post){
+    this._postService.removePost(post);
   }
 
   /**

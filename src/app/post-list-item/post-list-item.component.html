@@ -6,6 +6,8 @@
 
   <p style="display:block; float:right; margin-top: -40px;">{{ postElementToDisplay.created_at |date:'short' }}</p> 
   <p [ngStyle]="{color: postColor}">{{ postElementToDisplay.content }}</p>
+
+  <button (click)="onDeletePost(postElementToDisplay)" class="btn btn-danger">Supprimer</button>
   
   <button type="button" class="btn btn-success"(click)="onLikeIt()">
     <span *ngIf="postElementToDisplay.loveIts > 0">{{ postElementToDisplay.loveIts }}</span>
