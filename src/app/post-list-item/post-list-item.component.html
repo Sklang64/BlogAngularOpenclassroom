@@ -7,14 +7,14 @@
   <p style="display:block; float:right; margin-top: -40px;">{{ postElementToDisplay.created_at |date:'short' }}</p> 
   <p [ngStyle]="{color: postColor}">{{ postElementToDisplay.content }}</p>
 
-  <button (click)="onDeletePost(postElementToDisplay)" class="btn btn-danger">Supprimer</button>
+  <button (click)="onDeletePost(postElementToDisplay)" class="btn btn-danger" style="margin-right: 10px;">Supprimer</button>
   
-  <button type="button" class="btn btn-success"(click)="onLikeIt()">
+  <button type="button" class="btn btn-success"(click)="onLikeIt(postElementToDisplay)">
     <span *ngIf="postElementToDisplay.loveIts > 0">{{ postElementToDisplay.loveIts }}</span>
     <i class="far fa-thumbs-up"></i>
   </button>
 
-  <button type="button" class="btn btn-danger" style="margin-left:10px;" (click)="onDontLikeIt()">
+  <button type="button" class="btn btn-danger" style="margin-left:10px;" (click)="onDontLikeIt(postElementToDisplay)">
     <span *ngIf="postElementToDisplay.loveIts < 0">{{ postElementToDisplay.loveIts }}</span>
     <i class="far fa-thumbs-down"></i>
   </button>

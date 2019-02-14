@@ -1,10 +1,8 @@
 export class Post
 {
-loveIts:number;
-created_at:Date;
+loveIts:number = 0;
 
 constructor( public title: string, public content: string){
-this.created_at = new Date();
 }
 
 }

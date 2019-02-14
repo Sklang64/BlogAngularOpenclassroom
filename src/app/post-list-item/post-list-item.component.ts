@@ -38,12 +38,12 @@ export class PostListItemComponent implements OnInit {
   /**
    * Description : Fonction qui permet d'incrémenter le nombre de like et d'appliquer les modifications visuelles en conséquence.
    */
-  onLikeIt(){
-    this.postElementToDisplay.loveIts++;
-    if(this.postElementToDisplay.loveIts > 0){
+  onLikeIt(post: Post){
+    this._postService.like(post);
+    if(post.loveIts > 0){
       return this.postColor = 'green';
     }
-    if(this.postElementToDisplay.loveIts == 0){
+    if(post.loveIts == 0){
       return this.postColor ='';
     }
   }
@@ -51,12 +51,12 @@ export class PostListItemComponent implements OnInit {
   /**
    * Description : Fonction qui permet de décrementer le nombre de like et d'appliquer les modifications visuelles en conséquence.
    */
-  onDontLikeIt(){
-    this.postElementToDisplay.loveIts--;
-    if(this.postElementToDisplay.loveIts < 0){
+  onDontLikeIt(post: Post){
+    this._postService.disLike(post);
+    if(post.loveIts < 0){
       return this.postColor = 'red';
     }
-    if(this.postElementToDisplay.loveIts == 0){
+    if(post.loveIts == 0){
       return this.postColor ='';
     }
   }

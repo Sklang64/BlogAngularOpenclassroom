@@ -16,15 +16,14 @@ export class AppComponent
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyA0FJ_rHaioFxb7CQCZ20ZOxFu86XPp5uQ",
-    authDomain: "blogangularopenclassrooms.firebaseapp.com",
-    databaseURL: "https://blogangularopenclassrooms.firebaseio.com",
-    projectId: "blogangularopenclassrooms",
-    storageBucket: "blogangularopenclassrooms.appspot.com",
-    messagingSenderId: "819820542200"
+    apiKey: "AIzaSyCv4NUAl0w5YHopk4D9qxX7lpjx3_35ax8",
+    authDomain: "blogangularopenclassroom-cdc27.firebaseapp.com",
+    databaseURL: "https://blogangularopenclassroom-cdc27.firebaseio.com",
+    projectId: "blogangularopenclassroom-cdc27",
+    storageBucket: "blogangularopenclassroom-cdc27.appspot.com",
+    messagingSenderId: "704818989509"
   };
   firebase.initializeApp(config);
-
   }
 
 }

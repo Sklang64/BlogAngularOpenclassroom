@@ -62,4 +62,30 @@ export class PostService {
     this.emitPost();
   }
 
+  /**
+   * Ajouter un nombre positif de like à un objet post
+   * @param post Post
+   */
+  like(post: Post){
+    
+    const postindexElement = this.posts.findIndex(
+      (postEl) => postEl === post 
+    );
+    this.posts[postindexElement].loveIts++;
+    this.savePosts();
+    this.emitPost();
+  }
+
+  /**
+   * Retire un nombre de like à un objet Post
+   * @param post Post
+   */
+  disLike(post: Post){
+    const postindexElement = this.posts.findIndex(
+      (postEl) => postEl === post );
+    this.posts[postindexElement].loveIts--;
+    this.savePosts();
+    this.emitPost();
+  }
+
 }
